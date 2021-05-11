@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %} {% block body %}
+
+<h2 class="page-header">Current Inventory</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Weight</th>
+      <th>Category</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for inventory in inventories %}
+    <tr>
+      <th scope="row">{{ inventory.id }}</th>
+      <td>{{ inventory.name }}</td>
+      <td>{{ inventory.quantity }}</td>
+      <td>{{ inventory.weight }}</td>
+      <td>{{ inventory.category }}</td>
+      <td>{{ inventory.notes }}</td>
+      <td>
+        <a href="/details/{{ inventory.id }}" class="btn btn-success">View</a>
+        <a href="/edit/{{ inventory.id }}" class="btn btn-default">Edit</a>
+        <a href="/delete/{{ inventory.id }}" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

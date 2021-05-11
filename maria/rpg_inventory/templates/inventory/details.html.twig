@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %} {% block body %}
+<h2 class="page-header">{{ inventory.name }}</h2>
+<ul class="list-group">
+  <li class="list-group-item">Quantity: {{ inventory.quantity }}</li>
+  <li class="list-group-item">Weight: {{ inventory.weight }}</li>
+  <li class="list-group-item">Category: {{ inventory.category }}</li>
+  <li class="list-group-item">Notes: {{ inventory.notes }}</li>
+</ul>
+<p>
+  <img src="{{ inventory.image }}" alt="{{ inventory.name }}" />
+</p>
+
+<br />
+<a class="btn btn-default" href="/">Back to Inventory</a>
+{% endblock %}
